@@ -1,9 +1,12 @@
 import asyncio
+import os.path
 import sys
 
-from config import bot, dispatch
+from config import bot, dispatch, CAR_SHOP_DETAILS
 
 from handlers.routers import *
+from aiogram.types import FSInputFile
+from pathlib import Path
 
 @router_start_bot.startup()
 async def on_startup():
@@ -27,8 +30,15 @@ async def main():
     finally:
         await bot.session.close()
 
+async def test():
+    pth = "media/carDetails/Kollector.jpeg"
+    print(FSInputFile(pth))
+
+    print(Path(__file__).parent.absolute())
+
 if __name__ == '__main__':
     asyncio.run(main())
+    # asyncio.run(test())
 
 
 

@@ -3,8 +3,8 @@ from aiogram.filters.callback_data import CallbackData
 
 class carDetailsShowCallback(CallbackData, prefix="carDetailsShow"):
     action: str = ""
-    carCompany: str = ""
-    carModel: str = ""
+    carBrand: str = ""
+    carDetail: str = ""
     callbackLevel: str = ""
-    part_id: str = ""
+    callbackLevelNext: str = ""
 
